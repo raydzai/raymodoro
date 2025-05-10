@@ -1,0 +1,54 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000; /* Nền màu đen */
+    overflow: hidden;
+    font-family: "Arial Rounded MT Bold", sans-serif; /* Hoặc tùy font */
+  }
+  
+  /* Khối chứa toàn bộ đồng hồ */
+  .bubble-clock {
+    display: flex;
+    align-items: center;
+    color: #4BA3F7; /* Màu chữ xanh dương kiểu iOS, tuỳ chỉnh */
+    font-weight: bold;
+    /* Chữ rất lớn cho phong cách Standby */
+    font-size: 20vw; 
+    line-height: 1;
+    user-select: none; /* Không cho bôi đen text */
+  }
+  
+  /* Đồng hồ chia làm 3 thành phần: giờ, colon, phút */
+  .bubble-hour, .bubble-minute {
+    /* Bổ sung hiệu ứng "bong bóng" bằng text-shadow */
+    text-shadow: 
+      0 0 15px rgba(75, 163, 247, 0.7), 
+      0 0 40px rgba(75, 163, 247, 0.3);
+  }
+  
+  /* Phần colon nằm chính giữa, gồm 2 chấm tròn (dot) xếp dọc */
+  .bubble-colon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0.1em; /* Khoảng cách ngang giữa giờ và phút */
+    height: 1em;     /* Chiều cao để hai dot tách nhau ra */
+  }
+  
+  /* Mỗi chấm trong dấu hai chấm */
+  .bubble-colon .dot {
+    width: 0.15em;
+    height: 0.15em;
+    border-radius: 50%;
+    background-color: #FFF; /* Màu trắng cho dấu hai chấm */
+    /* Nếu muốn hiệu ứng sáng, thêm box-shadow */
+    box-shadow:
+      0 0 10px rgba(255, 255, 255, 0.6);
+  }
+  
